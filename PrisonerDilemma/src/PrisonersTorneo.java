@@ -3,7 +3,7 @@ import java.util.Random;
 public class PrisonersTorneo {
 
     static final int TURNI = 200;
-    static final Random r = new Random(System.currentTimeMillis());
+    static final Random r = new Random();
 
     public static void main(String[] args) {
         // 0==C, 1==T, 2==random
@@ -76,6 +76,7 @@ public class PrisonersTorneo {
     }
 
     private static char playRandom(int prob) {
+        r.setSeed(System.nanoTime());
         return r.nextInt(0, 100) < prob ? 'C' : 'T';
     }
 
