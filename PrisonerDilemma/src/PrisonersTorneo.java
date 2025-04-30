@@ -26,18 +26,17 @@ public class PrisonersTorneo {
         System.out.println("Risultati torneo:");
         for (int i = 0; i < len; i++) {
             System.out.print(strategies[i] + ": ");
-            for (int j = 0; j < len; j++) {
-                System.out.print(risultati[i][j] + " ");
-            }
+            for (int j = 0; j < len; j++) System.out.print(risultati[i][j] + " ");
             System.out.println("| Totale: " + totali[i]);
         }
 
     }
 
     public static int[] playGame(int stratA, int stratB) {
-        //
+
         char[] movesA = new char[TURNI];
         char[] movesB = new char[TURNI];
+
         for (int i = 0; i < TURNI; i++) {
             movesA[i] = computeMove(stratA, movesB);
             movesB[i] = computeMove(stratB, movesA);
@@ -53,13 +52,12 @@ public class PrisonersTorneo {
             punteggioB += points[1];
         }
 
-        int[] res = {punteggioA, punteggioB};
-        return res;
+        return new int[]{punteggioA, punteggioB};
     }
 
     private static int[] calcolaPunteggi(char moveA, char moveB) {
         if (moveA == 'C' && moveB == 'C') {
-            //restituisco array dim 2
+            //restituisco array lungo due dove la prima posizione è il punteggio di stratA, la seconda di stratB
             return new int[]{3, 3};
         } else if (moveA == 'C' && moveB == 'T') {
             return new int[]{0, 5};
