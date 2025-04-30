@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class PrisonersTorneo {
 
-    static final int TURNI = 20;
+    static final int TURNI = 200;
     static final Random r = new Random();
 
     public static void main(String[] args) {
