@@ -41,6 +41,7 @@ public class PrisonersTorneo {
             movesA[i] = computeMove(stratA, movesB);
             movesB[i] = computeMove(stratB, movesA);
         }
+
         //Calcolo punteggi
         //Come facciamo?
         int punteggioA = 0;
@@ -57,7 +58,8 @@ public class PrisonersTorneo {
 
     private static int[] calcolaPunteggi(char moveA, char moveB) {
         if (moveA == 'C' && moveB == 'C') {
-            //restituisco array lungo due dove la prima posizione è il punteggio di stratA, la seconda di stratB
+            //restituisco array lungo due
+            // dove la prima posizione è il punteggio di stratA, la seconda di stratB
             return new int[]{3, 3};
         } else if (moveA == 'C' && moveB == 'T') {
             return new int[]{0, 5};
